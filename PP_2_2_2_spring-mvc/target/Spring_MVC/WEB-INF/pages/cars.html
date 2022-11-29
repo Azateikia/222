@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <div>
+        <table border="1">
+            <tr>
+                <th>Mark</th>
+                <th>Model</th>
+                <th>Engine</th>
+            </tr>
+            <tr th:each="car: ${cars.stream().limit(count).toList()}">
+                <td th:utext="${car.getMark()}">...</td>
+                <td th:utext="${car.getModel()}">...</td>
+                <td th:utext="${car.getEngine()}">...</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
